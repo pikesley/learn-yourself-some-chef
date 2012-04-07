@@ -9,26 +9,26 @@ Vagrant::Config.run do |config|
     chefserver_config.vm.box = "lucid64"
     config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
     chefserver_config.vm.network :hostonly, "33.33.33.100"
+    chefserver_config.vm.customize ["modifyvm", :id, "--memory", 1024]
   end
 
 ################################################################################
 
-###   config.vm.define :protoscore do |protoscore_config|
-###     protoscore_config.vm.host_name = "protoscore"
-###     protoscore_config.vm.box = "lucid64"
-###     protoscore_config.vm.network :hostonly, "33.33.33.50"
-### 
-###     protoscore_config.vm.provision :chef_client do |chef|
-###       chef.node_name = "protoscore-vagrant"
-###       chef.chef_server_url = "http://chef.amee.com:4000"
-###       chef.provisioning_path = "/etc/chef"
-###       chef.validation_client_name = "chef-validator"
-###       chef.validation_key_path = ".chef/validation.pem"
-### #      chef.run_list = chef.run_list = [
-### #                                        "role[amee-protoscore]"
-### #                                      ]
-### # can put a role here, too
-###       chef.environment = "vagrant-dev"
-###     end
-###   end
+  config.vm.define :doctorwu do |doctorwu_config|
+    doctorwu_config.vm.host_name = "doctorwu"
+    doctorwu_config.vm.box = "lucid64"
+    doctorwu_config.vm.network :hostonly, "33.33.33.101"
+
+    doctorwu_config.vm.provision :chef_client do |chef|
+      chef.node_name = "doctorwu"
+      chef.chef_server_url = "http://33.33.33.100:4000"
+      chef.provisioning_path = "/etc/chef"
+      chef.validation_client_name = "chef-validator"
+      chef.validation_key_path = ".chef/validation.pem"
+      chef.environment = "studio"
+    end
+  end
+
+################################################################################
+
 end
