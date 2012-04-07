@@ -11,7 +11,7 @@ validation_key           "#{current_dir}/validation.pem"
 
 chef_server_url          'http://33.33.33.100:4000'
 cache_type               'BasicFile'
-cache_options( :path => '.chef/checksums' )
+cache_options( :path => "#{current_dir}/.chef/checksums" )
 
 cookbook_copyright      'Learn Yourself Some Chef'
 cookbook_email          'chef@cruft.co'
