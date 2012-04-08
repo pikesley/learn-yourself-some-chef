@@ -16,3 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+template "/home/vagrant/bodhisattva" do
+  source "bodhisattva.erb"
+  mode "0755"
+end
