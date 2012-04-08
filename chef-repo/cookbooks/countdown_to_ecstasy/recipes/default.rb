@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+#node.override["my_old_school"] = "recipe override attribute"
+
 template "/home/vagrant/bodhisattva" do
   source "bodhisattva.erb"
   mode "0755"
