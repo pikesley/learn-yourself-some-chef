@@ -51,6 +51,9 @@ To look something like the following:
     validation_client_name 'chef-validator'
     validation_key   "C:/chef/validation.pem"
     client_key       "C:/chef/client.pem"
+    file_cache_path  "C:/chef/cache"
+    cache_type       "BasicFile"
+    cache_options    ({ :path => "C:/chef/cache/checksums", :skip_expires => true })
 
 And make sure C:/Chef/validation.pem contains your chef validator private key
 
