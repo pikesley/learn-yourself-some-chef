@@ -19,9 +19,7 @@ Fire up the node, and RDP in as Administrator.
 
 Open Powershell, and download & install the chef-client msi
 
-    PS C:\Users\Administrator> Import-Module BitsTransfer
-    PS C:\Users\Administrator> Start-BitsTransfer -source "http://opscode.com/chef/install.msi"
-    PS C:\Users\Administrator> .\install.msi /qb
+    PS C:\Users\Administrator> Import-Module BitsTransfer; Start-BitsTransfer -source "http://opscode.com/chef/install.msi"; .\install.msi /qb
 
 Wait till the MSI installation is completed, then close & reopen your Powershell window.  Test chef-client is installed:
 
